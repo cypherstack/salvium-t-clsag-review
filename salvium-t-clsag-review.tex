@@ -32,7 +32,7 @@ mathematical correctness and security implementation is essential.
 \end{itemize}
 
 \section{Scope}
-Commit snapshot: Salvium codebase as of commit \texttt{e5c9b05e}.  Reviewed directories:
+Commit snapshot: Salvium codebase as of commit \texttt{e5c9b05}.  Reviewed directories:
 \begin{itemize}
   \item \texttt{salvium/src/ringct/}, \texttt{salvium/src/carrot\_core/}
   \item \texttt{salvium/src/carrot\_impl/}, \texttt{salvium/src/wallet/}
@@ -137,9 +137,9 @@ properties while potentially offering implementation simplicity benefits.
 \paragraph{Problem}
 The T-CLSAG implementation reuses domain separators from the existing CLSAG 
 implementation.  Analysis of \texttt{rctSigs.cpp} shows usage of 
-\texttt{HASH\_KEY\_CLSAG\_AGG\_0} (lines 421, 1242), \texttt{HASH\_KEY\_CLSAG\_AGG\_1} (lines 423, 1244), and \\
-\texttt{HASH\_KEY\_CLSAG\_ROUND} (lines 446, 1266) constants.  These constants are defined in 
-\texttt{cryptonote\_config.h:356-358} as:
+\texttt{HASH\_KEY\_CLSAG\_AGG\_0}, \texttt{HASH\_KEY\_CLSAG\_AGG\_1}, and \\
+\texttt{HASH\_KEY\_CLSAG\_ROUND} constants.  These constants are defined in 
+\texttt{cryptonote\_config.h:357-359} as:
 \begin{verbatim}
 const unsigned char HASH_KEY_CLSAG_ROUND[] = "CLSAG_round";
 const unsigned char HASH_KEY_CLSAG_AGG_0[] = "CLSAG_agg_0";
@@ -216,7 +216,7 @@ the implementation choice.
 Analysis reveals comprehensive integration with blockchain validation systems 
 and wallet transaction building processes.  The implementation correctly 
 integrates with T-CLSAG transaction types through \texttt{is\_rct\_tclsag(rv.type)} 
-checks (lines 1989, 2134) and provides proper serialization support via the 
+checks and provides proper serialization support via the 
 \texttt{rv.p.TCLSAGs} vector.  Test coverage in \texttt{tests/unit\_tests/ringct.cpp:302-483} 
 includes comprehensive T-CLSAG signature generation, verification, and edge case handling 
 with tests for invalid signatures, tampered components, and boundary conditions.  
