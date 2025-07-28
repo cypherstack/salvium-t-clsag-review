@@ -15,9 +15,9 @@ This report describes the findings of a code audit of Salvium's T-CLSAG implemen
 \section{Overview}
 \subsection{Introduction}
 T-CLSAG (Two-scalar CLSAG) is a cryptographic signature scheme implemented in 
-Salvium to support Carrot addressing, which uses dual-scalar secrets for enhanced 
+Salvium to support CARROT (Cryptonote Address on Rerandomizable-RingCT-Output Transactions) addressing, which uses dual-scalar secrets for enhanced 
 privacy features.  The implementation extends the existing CLSAG signature system 
-to handle transactions with dual-key Carrot addresses while maintaining anonymity, 
+to handle transactions with dual-key CARROT addresses while maintaining anonymity, 
 linkability, and unforgeability properties.  Because it protects sensitive 
 cryptographic operations and financial transactions, rigorous scrutiny of the 
 mathematical correctness and security implementation is essential.
@@ -65,7 +65,7 @@ Analysis focused on core T-CLSAG functions \texttt{TCLSAG\_Gen()}, \\
 The T-CLSAG implementation follows a clear architectural pattern:
 \begin{itemize}
   \item \textbf{Core signature generation}: \texttt{TCLSAG\_Gen()} implements the cryptographic 
-        protocol with dual-scalar support for Carrot addresses.
+        protocol with dual-scalar support for CARROT addresses.
   \item \textbf{RingCT integration}: \texttt{proveRctTCLSAGSimple()} wraps the core function 
         for transaction-level usage.
   \item \textbf{Verification}: \texttt{verRctTCLSAGSimple()} implements the corresponding 
