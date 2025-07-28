@@ -78,7 +78,8 @@ The T-CLSAG implementation follows a clear architectural pattern:
 Key mathematical operations verified in the implementation:
 \begin{itemize}
   \item \textbf{Key image computation}: $I = x \cdot H_p(K)$ correctly implemented 
-        in \texttt{hwdev.clsag\_prepare\_carrot()} calls.
+        in \texttt{hwdev.clsag\_prepare\_carrot()} via \texttt{rct::scalarmultKey(I,H,p)} 
+        where \texttt{H = H\_p(K)} and \texttt{p} represents the private key $x$.
   \item \textbf{Challenge computation}: Proper hash chain construction using 
         \texttt{HASH\_KEY\_CLSAG\_ROUND} domain separator.
   \item \textbf{Dual-scalar signatures}: Both $s_x$ and $s_y$ components computed 
