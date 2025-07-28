@@ -1,0 +1,7 @@
+[submodule "monero"]
+	path = monero
+	url = http://github.com/monero-project/monero
+[submodule "salvium"]
+	path = salvium
+	url = http://github.com/salvium/salvium
+	branch = carrot-integration
