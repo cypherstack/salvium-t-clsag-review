@@ -77,7 +77,7 @@ The T-CLSAG implementation follows a clear architectural pattern:
 \subsection{Mathematical Correctness Verification}
 Key mathematical operations verified in the implementation:
 \begin{itemize}
-  \item \textbf{Key image computation}: $L = x \cdot H_p(K)$ correctly implemented 
+  \item \textbf{Key image computation}: $I = x \cdot H_p(K)$ correctly implemented 
         in \texttt{hwdev.clsag\_prepare\_carrot()} calls.
   \item \textbf{Challenge computation}: Proper hash chain construction using 
         \texttt{HASH\_KEY\_CLSAG\_ROUND} domain separator.
